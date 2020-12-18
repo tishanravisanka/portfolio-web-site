@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width" />
+   <title>Education</title>
+
+   <!-- for top navigation bar -->
+   <link rel="stylesheet" href="css/responsee.css">
+   <!-- form ui elements -->
+   <link rel="stylesheet" href="css/components.css">
+   <!-- custom styles -->
+   <link rel="stylesheet" href="css/template-style.css">
+   <!-- for menu slider in the mobile navigation menu -->
+   <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+   <script type="text/javascript" src="js/responsee.js"></script>
+
+   <style>
+      th {
+         background-color: #4CAF50;
+         color: white;
+       }
+   </style>
+   
+</head>
+
+<body class="size-1140">
+   <!-- Top navigation -->
+   <header>
+      <nav>
+         <div class="line">
+            <div class="top-nav">
+               <div class="logo hide-l">
+                  <a href="index.html">My <br /><strong>Profile</strong></a>
+               </div>
+               <p class="nav-text">Menu</p>
+               <div class="top-nav s-12 l-5">
+                  <ul class="right top-ul chevron">
+                     <li><a href="education.html">Education</a>
+                     </li>
+                     <li>
+                        <a>ProJects</a>
+                        <!-- sub navigation items -->
+                        <ul>
+                           <li><a href="projects.html">Plant Up</a>
+                           </li>
+                           <li><a href="projects.html">Fuel Mind</a>
+                           </li>
+                           <li><a href="projects.html">B-Bank</a>
+                           </li>
+                           <li><a href="projects.html">CNC Plotter</a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+               <ul class="s-12 l-2">
+                  <li class="logo hide-s hide-m">
+                     <a href="index.html">My <br /><strong>Profile</strong></a>
+                  </li>
+               </ul>
+               <div class="top-nav s-12 l-5">
+                  <ul class="top-ul chevron">
+                     <li><a href="interest.html">Interests</a>
+                     </li>
+                     <li><a href="contact.html">Contact me</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <section>
+
+
+      <!-- education page discription -->
+      <div id="head">
+         <div class="line">
+            <h1>Education</h1>
+         </div>
+      </div>
+      <div id="content" class="left-align contact-page">
+         <div class="line">
+            <div style="padding: 30px;" class="margin s-12 l-5">
+              <h2> O/L achievements</h2><br/>
+            <table>
+               <tr>
+                  <th>SUBJECT</th>
+                  <th>GRADE</th>
+               </tr>
+               <tr>
+                 <td>SINHALA</td>
+                 <td>A</td>
+               </tr>
+               <tr>
+                 <td>MATHEMATICS</td>
+                 <td>A</td>
+               </tr>
+               <tr>
+                 <td>HISTORY</td>
+                 <td>A</td>
+               </tr>
+               <tr>
+                 <td>ART</td>
+                 <td>A</td>
+               </tr>
+               <tr>
+                 <td>COMMERCE</td>
+                 <td>A</td>
+               </tr>
+               <tr>
+                 <td>HEALTH</td>
+                 <td>A</td>
+               </tr>
+                 <tr>
+                 <td>BUDDHISM</td>
+                 <td>A</td>
+               </tr>
+                 <tr>
+                 <td>ENGLISH</td>
+                 <td>A</td>
+               </tr>
+                 <tr>
+                 <td>SCIENCE</td>
+                 <td>A</td>
+               </tr>
+             </table>
+         </div>
+            <div style="padding: 30px;" class="margin s-12 l-5">
+               <h2> A/L achievements</h2><br/>
+                  <table>
+                     <tr>
+                        <th>Subject</th>
+                        <th>Result</th>
+                     </tr>
+                     <tr>
+                        <td>Combined Mathematics</td>
+                        <td>A</td>
+                     </tr>
+                     <tr>
+                        <td>Physics</td>
+                        <td>B</td>
+                     </tr>
+                     <tr>
+                        <td>Chemistry</td>
+                        <td>B</td>
+                     </tr>
+                  </table>
+            </div>
+               
+               <div class="margin s-12 l-12">
+               <br/><h2> University achievements</h2><br/>
+               <table>
+                  <thread>
+                     <tr>
+                        <th onclick="sortCol('sem')"><i class="icon-arrow_down icon"></i>Semester</th>
+                        <th onclick="sortCol2(1)"><i class="icon-arrow_down icon"></i>Course Code</th>
+                        <th onclick="sortCol2(2)"><i class="icon-arrow_down icon"></i>Subject</th>
+                        <th onclick="sortCol('credits')"><i class="icon-arrow_down icon"></i>Grade</th>
+                     </tr>
+                  </thread>
+                  <tbody id="tableData"></tbody>
+               </table>
+
+
+            </div>
+         </div>
+      </div>
+
+   </section>
+   <!-- end of education page discription -->
+
+
+   <!-- footer -->
+   <footer>
+      <div class="line">
+         <div class="s-12 l-6">
+            <p>0712801410
+            </p>
+         </div>
+         <div class="s-12 l-6">
+            <p class="right">
+               <a class="right" title="Responsee - lightweight responsive framework">
+                  206/1, Manana Road, Poruwadanda, Sri Lanka.
+               </a>
+            </p>
+         </div>
+      </div>
+   </footer>
+
+   <script>
+      // to load the data in to the table in real time
+      function loadTableData(data) {
+         const tableBody = document.getElementById('tableData');
+         let dataHtml = '';
+
+         for (let person of data) {
+            dataHtml +=
+               `<tr><td>${person.sem}</td><td>${person.courseCode}</td><td>${person.subject}</td><td>${person.grade}</tb></tr>`;
+         }
+         tableBody.innerHTML = dataHtml;
+      }
+
+      let sortOrder = true;
+
+      //  data set for the table
+      let data = [
+        {sem : 1, courseCode: 'CE 1201',subject :'Properties of Materials',grade:'A-',credits :3.7 },
+        {sem : 1, courseCode: 'CO 1201',subject :'Introduction to Computer System',grade:'A',credits :4},
+        {sem : 1, courseCode: 'EE 1201',subject :'Electricity',grade:'A-',credits :3.7},
+        {sem : 1, courseCode: 'ME 1301',subject :'Engineering Machanics ',grade:'A-',credits :3.7 },
+        {sem : 1, courseCode: 'ME 1202',subject :'Introduction to Thermodynamics',grade:'B',credits :3 },
+        {sem : 1, courseCode: 'IS 1301',subject :'Engineering Mathematics 1',grade:'A-',credits :3.7},
+        {sem : 1, courseCode: 'IS 1151',subject :'English for Communication',grade:'A-',credits :3.7},
+        {sem : 1, courseCode: 'IS 1171',subject :'History of Science and Technology',grade:'C+',credits :2.3},
+        {sem : 1, courseCode: 'IS 1281',subject :'Engineering Measurement',grade:'A',credits :4},
+
+        {sem : 2, courseCode: 'CE 1202',subject :'Introduction to Fluid Mechanics',grade:'C+',credits :2.3 },
+        {sem : 2, courseCode: 'CO 1302',subject :'Programming for Engineers',grade:'A',credits :4},
+        {sem : 2, courseCode: 'EE 1302',subject :'Electronics',grade:'A+',credits :4.001},
+        {sem : 2, courseCode: 'ME 1303',subject :'Basic Manufacturing Processes',grade:'A-',credits :3.7 },
+        {sem : 2, courseCode: 'ME 1304',subject :'Engineering Drawing',grade:'B+',credits :3.3},
+        {sem : 2, courseCode: 'IS 1302',subject :'Engineering Mathematics II',grade:'B+',credits :3.3},
+        {sem : 2, courseCode: 'IS 1152',subject :'Presentation Skills in English ',grade:'A',credits :4},  
+      ];
+     // innitialy load the data to the table
+      loadTableData(data);
+      
+      // sort columns having charactor values
+      function sortCol2(col) {
+         var switching = true, i, shift, count = 0, sortOrder2 = true;
+         var table = document.getElementById('tableData');
+         while (switching) {
+            switching = false;
+            for (i = 0; i < (table.rows.length - 1); i++) {
+               shift = false;
+               if (sortOrder2) {
+                  if (table.rows[i].getElementsByTagName("td")[col].innerHTML.toLowerCase() > table.rows[i + 1].getElementsByTagName("td")[col].innerHTML.toLowerCase()) {
+                     shift = true;
+                     break;
+                  }
+               } 
+               else if (table.rows[i].getElementsByTagName("td")[col].innerHTML.toLowerCase() < table.rows[i + 1].getElementsByTagName("td")[col].innerHTML.toLowerCase()) {
+                  shift = true;
+                  break; 
+               }
+            }
+            if (shift) {
+               table.rows[i].parentNode.insertBefore(table.rows[i + 1], table.rows[i]);
+               switching = true;
+               count++;
+            } 
+            else if (count == 0 && sortOrder2) {
+               sortOrder2 = false;
+               switching = true; 
+            }
+         }
+      }
+      // sort data which having integer values
+      function sortCol(colName) {
+         sortOrder= !sortOrder;
+         data = data.sort((r1, r2) => {
+            return sortOrder ? r1[colName] - r2[colName] : r2[colName] - r1[colName]
+         });
+         loadTableData(data); // refresh the table
+      }
+   </script>
+
+
+</body>
+
+</html>
